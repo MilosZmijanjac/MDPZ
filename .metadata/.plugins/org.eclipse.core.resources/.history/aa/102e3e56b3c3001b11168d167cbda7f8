@@ -1,0 +1,9 @@
+package org.unibl.etf.mdp.rmi.client;
+
+public class AZSClient {
+
+	public AZSClient() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

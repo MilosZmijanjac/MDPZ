@@ -1,0 +1,9 @@
+package org.unibl.etf.mdp.rmi.model;
+
+public class ReportDetails {
+
+	public ReportDetails() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

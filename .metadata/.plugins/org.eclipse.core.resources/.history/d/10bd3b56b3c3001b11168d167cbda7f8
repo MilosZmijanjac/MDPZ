@@ -1,0 +1,10 @@
+package org.unibl.etf.mdp.rmi.server;
+
+public class AZSServer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

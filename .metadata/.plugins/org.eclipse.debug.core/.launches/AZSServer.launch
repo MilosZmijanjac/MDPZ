@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/AZSMDP/src/org/unibl/etf/mdp/rmi/server/AZSServer.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.unibl.etf.mdp.rmi.server.AZSServer"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="AZSMDP"/>
+</launchConfiguration>
