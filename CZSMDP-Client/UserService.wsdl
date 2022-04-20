@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap" xmlns:intf="http://soap" xmlns:tns1="http://model" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model"/>
+   <element name="getUsers">
+    <complexType/>
+   </element>
+   <element name="getUsersResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getUsersReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="login">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginResponse">
+    <complexType>
+     <sequence>
+      <element name="loginReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logout">
+    <complexType>
+     <sequence>
+      <element name="user" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="logoutResponse">
+    <complexType/>
+   </element>
+   <element name="addNewUser">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="station_id" type="xsd:string"/>
+      <element name="xml_file" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addNewUserResponse">
+    <complexType>
+     <sequence>
+      <element name="addNewUserReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeUser">
+    <complexType>
+     <sequence>
+      <element name="user" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeUserResponse">
+    <complexType>
+     <sequence>
+      <element name="removeUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStationIds">
+    <complexType/>
+   </element>
+   <element name="getStationIdsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getStationIdsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUsersByStationId">
+    <complexType>
+     <sequence>
+      <element name="station_id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUsersByStationIdResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getUsersByStationIdReturn" type="tns1:User"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="User">
+    <sequence>
+     <element name="_password" nillable="true" type="xsd:string"/>
+     <element name="_port" nillable="true" type="xsd:int"/>
+     <element name="_salt" nillable="true" type="xsd:string"/>
+     <element name="_stationID" nillable="true" type="xsd:string"/>
+     <element name="_username" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="loginResponse">
+
+      <wsdl:part element="impl:loginResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutResponse">
+
+      <wsdl:part element="impl:logoutResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginRequest">
+
+      <wsdl:part element="impl:login" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersByStationIdRequest">
+
+      <wsdl:part element="impl:getUsersByStationId" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="logoutRequest">
+
+      <wsdl:part element="impl:logout" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addNewUserRequest">
+
+      <wsdl:part element="impl:addNewUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeUserResponse">
+
+      <wsdl:part element="impl:removeUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersByStationIdResponse">
+
+      <wsdl:part element="impl:getUsersByStationIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addNewUserResponse">
+
+      <wsdl:part element="impl:addNewUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStationIdsRequest">
+
+      <wsdl:part element="impl:getStationIds" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStationIdsResponse">
+
+      <wsdl:part element="impl:getStationIdsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersResponse">
+
+      <wsdl:part element="impl:getUsersResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersRequest">
+
+      <wsdl:part element="impl:getUsers" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeUserRequest">
+
+      <wsdl:part element="impl:removeUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="UserService">
+
+      <wsdl:operation name="getUsers">
+
+         <wsdl:input message="impl:getUsersRequest" name="getUsersRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUsersResponse" name="getUsersResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdl:input message="impl:logoutRequest" name="logoutRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:logoutResponse" name="logoutResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addNewUser">
+
+         <wsdl:input message="impl:addNewUserRequest" name="addNewUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addNewUserResponse" name="addNewUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeUser">
+
+         <wsdl:input message="impl:removeUserRequest" name="removeUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeUserResponse" name="removeUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStationIds">
+
+         <wsdl:input message="impl:getStationIdsRequest" name="getStationIdsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStationIdsResponse" name="getStationIdsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUsersByStationId">
+
+         <wsdl:input message="impl:getUsersByStationIdRequest" name="getUsersByStationIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUsersByStationIdResponse" name="getUsersByStationIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="UserServiceSoapBinding" type="impl:UserService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getUsers">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUsersRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUsersResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="logout">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="logoutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="logoutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addNewUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addNewUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addNewUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStationIds">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStationIdsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStationIdsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUsersByStationId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUsersByStationIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUsersByStationIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="UserServiceService">
+
+      <wsdl:port binding="impl:UserServiceSoapBinding" name="UserService">
+
+         <wsdlsoap:address location="http://localhost:8080/CZSMDP-Server/services/UserService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
