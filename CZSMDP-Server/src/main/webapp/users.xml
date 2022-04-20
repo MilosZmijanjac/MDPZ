@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_321" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="model.User">
+    <void property="_password">
+     <string>c521fdbfbd32332ea40ece720e4d8bfd3f6c8ee21d6d01adb7c62068b29b81f9</string>
+    </void>
+    <void property="_salt">
+     <string>5bDli9vPribFDaX6le6OjbtqzAm8MPSHS4RXtd3dcfw</string>
+    </void>
+    <void property="_stationID">
+     <string>KD</string>
+    </void>
+    <void property="_username">
+     <string>Petar</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.User">
+    <void property="_password">
+     <string>c1ced4b830a612c8babf8ff9c282b653b9e474d5d8417cb4daea7d749a3bee88</string>
+    </void>
+    <void property="_salt">
+     <string>1AJAk/dv4U5DWiC17Wg7s6CniGIqtQbzEGWHel0YlpM</string>
+    </void>
+    <void property="_stationID">
+     <string>KD</string>
+    </void>
+    <void property="_username">
+     <string>Milos</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.User">
+    <void property="_password">
+     <string>8624742dba52420022c0411b54c3bf912fea6b02a08386d3d4b55f62a011e1c7</string>
+    </void>
+    <void property="_salt">
+     <string>kJYV+3+THkRIbzTob9CC/J0R2vtPzyL44s8wn83C8yY</string>
+    </void>
+    <void property="_stationID">
+     <string>BL</string>
+    </void>
+    <void property="_username">
+     <string>Milica</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.User">
+    <void property="_password">
+     <string>02db7a167028e216e2bbb8d039c153588248fbf149da0f720577e0d9076e96e0</string>
+    </void>
+    <void property="_salt">
+     <string>qQUO0cNeSOjw4Wn1hNB2vPxbDljwVx/jLmVDqUiNFSY</string>
+    </void>
+    <void property="_stationID">
+     <string>BL</string>
+    </void>
+    <void property="_username">
+     <string>Ivan</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.User">
+    <void property="_password">
+     <string>ecb83da410aa2f682e1509af914e8e22da1cba2537459544e88708dcff27dd03</string>
+    </void>
+    <void property="_salt">
+     <string>mGwCWOt8Yge8Au5xI8hoD3JG9+FywalZHDTkCoAclhA</string>
+    </void>
+    <void property="_stationID">
+     <string>BL</string>
+    </void>
+    <void property="_username">
+     <string>Stefan</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.User">
+    <void property="_password">
+     <string>54bb066fc2ce8dac49f585880a44163133cc557d5d0aef2d68c44d52fbd3918a</string>
+    </void>
+    <void property="_salt">
+     <string>C7TlZ2fcEhWZp/iEsQV3ehIlMDiSeqkUwJFz/z71mcI</string>
+    </void>
+    <void property="_stationID">
+     <string>PD</string>
+    </void>
+    <void property="_username">
+     <string>Nikola</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.User">
+    <void property="_password">
+     <string>c1a4610d7aeea28ec609bde605c0a44276cd0821000e5080bc92ae9f412fd619</string>
+    </void>
+    <void property="_salt">
+     <string>U+E1HvA5aeCLnAEhT9pjEEJvDIQ8eaAeknfKgiQZXC0</string>
+    </void>
+    <void property="_stationID">
+     <string>PD</string>
+    </void>
+    <void property="_username">
+     <string>Ivana</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="model.User">
+    <void property="_password">
+     <string>26efa18af6f58766e473d7ca3c6736826f23d89099e37143707223d7b1231ad8</string>
+    </void>
+    <void property="_salt">
+     <string>iBL4un5Ly6ohwklJ858mBcR1doVW9EV6JXmTgOrRbgY</string>
+    </void>
+    <void property="_stationID">
+     <string>KD</string>
+    </void>
+    <void property="_username">
+     <string>Marko</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

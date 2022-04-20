@@ -1,0 +1,57 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UserServiceService WSDL service -->
+
+  <service name="UserService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soap"/>
+      <parameter name="wsdlServiceElement" value="UserServiceService"/>
+      <parameter name="schemaQualified" value="http://soap,http://model"/>
+      <parameter name="wsdlServicePort" value="UserService"/>
+      <parameter name="className" value="soap.UserServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="UserService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getUsers" qname="operNS:getUsers" xmlns:operNS="http://soap" returnQName="retNS:getUsersReturn" xmlns:retNS="http://soap" returnType="rtns:User" xmlns:rtns="http://model" soapAction="" >
+      </operation>
+      <operation name="logout" qname="operNS:logout" xmlns:operNS="http://soap" soapAction="" >
+        <parameter qname="pns:user" xmlns:pns="http://soap" type="tns:User" xmlns:tns="http://model"/>
+      </operation>
+      <operation name="login" qname="operNS:login" xmlns:operNS="http://soap" returnQName="retNS:loginReturn" xmlns:retNS="http://soap" returnType="rtns:User" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:username" xmlns:pns="http://soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getUsersByStationId" qname="operNS:getUsersByStationId" xmlns:operNS="http://soap" returnQName="retNS:getUsersByStationIdReturn" xmlns:retNS="http://soap" returnType="rtns:User" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:station_id" xmlns:pns="http://soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getStationIds" qname="operNS:getStationIds" xmlns:operNS="http://soap" returnQName="retNS:getStationIdsReturn" xmlns:retNS="http://soap" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="addNewUser" qname="operNS:addNewUser" xmlns:operNS="http://soap" returnQName="retNS:addNewUserReturn" xmlns:retNS="http://soap" returnType="rtns:User" xmlns:rtns="http://model" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:station_id" xmlns:pns="http://soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:xml_file" xmlns:pns="http://soap" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeUser" qname="operNS:removeUser" xmlns:operNS="http://soap" returnQName="retNS:removeUserReturn" xmlns:retNS="http://soap" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:user" xmlns:pns="http://soap" type="tns:User" xmlns:tns="http://model"/>
+      </operation>
+      <parameter name="allowedMethods" value="logout addNewUser removeUser getUsers getStationIds login getUsersByStationId"/>
+
+      <typeMapping
+        xmlns:ns="http://model"
+        qname="ns:User"
+        type="java:model.User"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
